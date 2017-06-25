@@ -1,2 +1,5 @@
 images
 results
+.DS_Store
+env_inwords-image-processing
+.idea
