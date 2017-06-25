@@ -27,8 +27,10 @@ for file_name in files_names:
     img = Image.open('images/' + file_name)
     if 'epic' in file_name:
         img = resize_as_epic(img)
-    elif 'thumbnail' in file_name:
-        img = resize_as_thumbnail(img)
+        img.save('results/' + file_name.replace('_raw', '').replace('.png', '.jpg'))
     else:
-        img = resize_as_author(img)
-    img.save('results/' + file_name.replace('_raw', ''))
+        if 'thumbnail' in file_name:
+            img = resize_as_thumbnail(img)
+        else:  # author
+            img = resize_as_author(img)
+        img.save('results/' + file_name.replace('_raw', ''))
