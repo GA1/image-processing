@@ -21,6 +21,10 @@ def resize_as_thumbnail(img):
 def resize_as_author(img):
     return img.resize((200, 200), Image.ANTIALIAS)
 
+try:
+    os.remove('images/.DS_Store')
+except:
+    pass
 
 files_names = os.listdir('./images')
 for file_name in files_names:
