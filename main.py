@@ -27,14 +27,23 @@ except:
     pass
 
 files_names = os.listdir('./images')
+
+
+def addPrefixIfNeeded(file_name):
+    if file_name.startswith('image_'):
+        return file_name
+    else:
+        return 'image_' + file_name
+
+
 for file_name in files_names:
     img = Image.open('images/' + file_name)
     if 'epic' in file_name:
         img = resize_as_epic(img)
-        img.save('results/image_' + file_name.replace('_raw', '').replace('.png', '.jpg'))
+        img.save('results/' + addPrefixIfNeeded(file_name).replace('_raw', '').replace('.png', '.jpg'))
     else:
         if 'thumbnail' in file_name:
             img = resize_as_thumbnail(img)
         else:  # author
             img = resize_as_author(img)
-        img.save('results/image_' + file_name.replace('_raw', ''))
+        img.save('results/' + addPrefixIfNeeded(file_name).replace('_raw', ''))

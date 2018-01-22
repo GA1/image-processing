@@ -1,5 +1,8 @@
 images
 results
+raw
 .DS_Store
 env_inwords-image-processing
+image-input.png
+image-output.png
 .idea
