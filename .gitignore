@@ -4,5 +4,6 @@ raw
 .DS_Store
 env_inwords-image-processing
 image-input.png
-image-output.png
+image-result-binarized.png
+image-result-white-pixels-to-transparent.png
 .idea
