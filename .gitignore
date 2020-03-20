@@ -6,4 +6,5 @@ env_inwords-image-processing
 image-input.png
 image-result-binarized.png
 image-result-white-pixels-to-transparent.png
+image-result-transparent-to-color.png
 .idea
